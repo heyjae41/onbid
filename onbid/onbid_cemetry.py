@@ -34,7 +34,7 @@ def openBrowser():
     검색시작일.clear()
     검색시작일.send_keys('2023-10-23')
     검색종료일 = browser.find_element(By.CSS_SELECTOR, '#searchClsDtm')
-    검색종료일.clear()
+    검색종료일.clear() 
     검색종료일.send_keys('2023-10-27')
 
     try:
