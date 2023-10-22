@@ -246,5 +246,4 @@ while True:
         browser.implicitly_wait(30) # seconds
 
 #asyncio.run(bot()) #텔레그램 봇 실행하는 코드
-
 print(time.strftime('%Y.%m.%d - %H:%M:%S')) # 년.월.일 - 시간
