@@ -13,6 +13,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import WebDriverException
+from selenium.webdriver.chrome.service import Service
 import telegram
 import asyncio
 
@@ -32,7 +33,9 @@ def openBrowser():
     #크롤링 대상 서버가 봇이 아닌 정상적인 접근으로 인지되도록 하기 위해 user-agent 조작
     options.add_argument('user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 Edg/110.0.1587.41')
     
-    browser= webdriver.Chrome('./chromedriver',options=options)
+    # browser= webdriver.Chrome('./chromedriver',options=options)
+    browser= webdriver.Chrome(service=Service('/Users/bccard9432/Downloads/chromedriver-mac-arm64/chromedriver'),options=options)
+    
     browser.maximize_window() # 브라우저 창 최대화 
     browser.get('https://www.onbid.co.kr/op/cta/cltrdtl/collateralDetailRealEstateList.do') #최초 진입 페이지
 
